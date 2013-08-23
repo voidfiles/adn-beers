@@ -1,0 +1,65 @@
+<div id="map"></div>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-6 panel beer-checkin" ng-class='{picking_location: beer && !location, location_found: beer && location}'>
+        <form ng-show='local.accessToken && !beer'>
+          <div class='form-group'>
+            <input type='text' class='input-large form-control typeahead-beer' placeholder='What kind of beer are you drinking?'>
+          </div>
+        </form>
+        <div ng-show='local.accessToken && beer' class='selected-beer'>
+          <div ng-bind-html-unsafe='beer.value'></div>
+          <p><small class='text-right'><a href='#remove' ng-click='removeBeer()'>remove</a></small></p>
+        </div>
+        <form ng-show='local.accessToken && beer && !location'>
+          <div class='form-group'>
+            <input type='text' class='input-large form-control typeahead-location' placeholder='Where are you drinking it?'>
+            <p class='help-block'>
+              <small><b>Click on the map to set your location.</b></small>
+            </p>  
+          </div>
+        </form>
+        <div ng-show='local.accessToken && beer && location' class='selected-location'>
+          <div ng-bind-html-unsafe='location.value'></div>
+          <p><small class='text-right'><a href='#remove' ng-click='removeLocation()'>remove</a></small></p>
+        </div>
+        <p class='background' ng-show='local.accessToken && beer && location && ohai_journal'>
+          <label>
+            <input type='checkbox' ng-model='use_ohai_journal'> Save to my Ohai Journal
+          </label>
+        </p>
+        <p class="text-center" ng-show='local.accessToken && beer && location'>
+            <button type="submit" class="btn btn-success btn-large btn-block" ng-click='checkin()' ng-disabled='!beer'>Check In</button>
+        </p>
+        <form ng-hide='local.accessToken'>
+          <p class='background'>
+            To start checking into beers you must first login, or create an account.<br>
+            It asks for the messages scope so that it can publish to your <a href='http://ohaiapp.net/' target='_blank'>Ohai</a> journal, if you have one.</p>
+          <p class="text-center">
+            <a type="submit" ng-href='https://account.app.net/oauth/authenticate?client_id={{client_id}}&scopes=write_post%20messages&response_type=token&redirect_uri={{redirect_uri}}' class="btn btn-success btn-large btn-block">Authorize With App.net</a>
+          </p>
+        </form>
+
+      </div><!-- //main content -->
+      <div class="modal fade image-selector"  data-image-picker data-backdrop='false'>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Choose an Image</h4>
+            </div>
+            <div class="modal-body">
+              <span ng-repeat='image in media' class='image'>
+                <a href='#' ng-click='selectImage(image)'>
+                  <img ng-src='{{ image.photo.photo_img_lg }}' width='260px' height='260px'>
+                </a>
+              </span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+  </div><!-- //row -->
+</div> <!-- //container -->

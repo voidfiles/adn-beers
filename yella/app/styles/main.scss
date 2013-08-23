@@ -1,0 +1,176 @@
+/* http://css-tricks.com/perfect-full-page-background-image/ */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+    background: transparent;
+}
+
+/* Override B3 .panel adding a subtly transparent background */
+.panel {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.page-header {
+  margin-top: 20px;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+select, .select2-container {
+  width: 100%;
+  font-size: 18px;
+}
+
+.beer-checkin, .beer-detail {
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  height: 100px;
+  margin-top: -150px;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.beer-detail {
+  height: 650px;
+  margin-top: -325px;
+}
+
+input, .selected-beer, .selected-location, .background {
+  background-color: rgba(255,255,255, .95) !important;
+  border: 0;
+}
+
+.selected-beer, .selected-location, .background {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 2px solid #aaa;
+}
+
+.my-div-icon {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 20px;
+  border: 4px solid #aaa;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
+  background-color: #428bca;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #428bbb;
+  border-color: #428bbb;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.beer-checkin.picking_location {
+  height: 200px;
+  margin-top: -250px;
+}
+
+
+.beer-checkin.location_found {
+  height: 300px;
+  margin-top: -150px;
+}
+
+
+
+/* Type ahead */
+.twitter-typeahead {
+  width: 100%;
+}
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.tt-dropdown-menu {
+  width: 100%;
+  min-width: 160px;
+  margin-top: 2px;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+
+.tt-suggestion.tt-is-under-cursor a {
+  color: #fff;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.tt-hint {
+  display: None;
+}
+
+.image-selector {
+
+  .modal-body {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .image {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    &:nth-child(even) {
+      margin-left: 18px;
+    }
+  }
+
+}
